@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="118" height="118" viewBox="0 0 118 118">
+  <defs>
+    <filter id="Exclusion_2" x="0" y="0" width="118" height="118" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="16.5" result="blur"/>
+      <feFlood flood-opacity="0.059"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Exclusion_2)">
+    <path id="Exclusion_2-2" data-name="Exclusion 2" d="M9.5,19a9.456,9.456,0,0,1-5.311-1.622A9.528,9.528,0,0,1,.747,13.2a9.487,9.487,0,0,1,.876-9.009A9.528,9.528,0,0,1,5.8.747a9.487,9.487,0,0,1,9.009.876A9.528,9.528,0,0,1,18.253,5.8a9.487,9.487,0,0,1-.876,9.009,9.528,9.528,0,0,1-4.18,3.442A9.44,9.44,0,0,1,9.5,19ZM8.143,7.26l.04,4.558L12.07,9.573,8.143,7.26Z" transform="translate(49.5 39.5)" fill="#fff"/>
+  </g>
+</svg>
