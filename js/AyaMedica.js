@@ -130,14 +130,14 @@ function setCalender(monthIndex, firstIndex, lastIndex) {
 
     for (let i = 1; i <= lastDay; i++) {
         if (months_numbers[monthIndex] == 11) {//if Novamber
-            if (i < 22) {
+            if (i < 20) {
                 days += `<div class='prev-day'>${i}</div>`
             } else {
                 days += `<div class='day-clicked-${i}'>${i}</div>`
             }
         }
         else { //if December
-            i > 22 ?
+            i > 20 ?
                 days += `<div class='prev-day'>${i}</div>`
                 :
                 days += `<div class='day-clicked-${i}'>${i}</div>`
@@ -159,7 +159,7 @@ function setCalender(monthIndex, firstIndex, lastIndex) {
     for (let i = 1; i <= lastDay; i++) {
         if (months_numbers[monthIndex] == 11) {
 
-            i < 22 ? ''
+            i < 20 ? ''
                 :
                 document.querySelector(`.day-clicked-${i}`).addEventListener('click', (ev) => {
                     if(lastClickedDay){
@@ -174,7 +174,7 @@ function setCalender(monthIndex, firstIndex, lastIndex) {
                 })
         }
         else {
-            i > 22 ?
+            i > 20 ?
                 ''
                 :
                 document.querySelector(`.day-clicked-${i}`).addEventListener('click', (ev) => {
