@@ -233,18 +233,34 @@
         <div id="goBook-Day">
           <div class="CountryDiv">
               <h4 class="country-name">COUNTRY: </h4>
-              <select name="country-select" id="countrySelect">
-                <option value="Egypt" selected> Egypt </option>
-                <option value="c2" > c2</option>
-                <option value="c3" >c3</option>
-                <option value="c4" >c4</option>
+              <select name="country-select" id="countrySelect" >
+                <option value="-" selected disabled> Country </option>
+                <option value="Egypt" > Egypt </option>
+                <option value="Oman" > Other</option>
               </select>
           </div>
+          <div class="BookedDaysDiv">
+            <h4>Booking Days: </h4>
+            <div>
+              <input type="text" placeholder="Check In" name="FromBookedDays" id= "FromBookedDays"/>
+              <button type="button" class="Dec-Nov-Btn">Dec/Nov</button>
+            </div>
+            <div>
+              <input type="text" placeholder="Check Out" name="ToBookedDays" id= "ToBookedDays"/>
+              <button type="button" class="Dec-Nov-Btn">Dec/Nov</button>
+            </div>
+            <div style="padding: 10px;">
+              <i> At Least 2 Days Between Comming And Leaving Day</i>
+            </div>
+        </div>
           <div class="priceDiv">
-            <h4 class="total-price"> Calender: </h4>
+            <h4 class="total-price"> CALENDAR: </h4>
           </div>
           <div class="calenderDive" id="calender-div">
             <div class="calender">
+              <div class="Calendar-Disabled-Div">
+                <span>Please Select Country First!!</span>
+              </div>
               <div class="month-div">
                 <span class="prev-month"> < </span>
                 <span> <h3></h3></span>
@@ -268,10 +284,10 @@
             <h4 class="div-day"> Your Day: <span id="day-choose-text"></span></h4>
           </div>
           <div class="priceDiv">
-            <h4 class="total-price"> Price: <span id="price-text">100$</span></h4>
+            <h4 class="total-price"> Price: <span id="price-text"></span></h4>
           </div>
           <div class="bookDiv">
-            <button class="goBook-btn" onclick="handleBookForm()"> BOOK</button>
+            <button class="goBook-btn" onclick="handleBookForm()" disabled> BOOK</button>
           </div>
         </div>
       </div>

@@ -8100,16 +8100,17 @@ p {
   font-weight: 600;
   color: #114b7a;
 }
-.Payment-Method .Doctor-Info .doctor-location .locations .location-btn.w--current{
+.Payment-Method .Doctor-Info .doctor-location .locations  .active{
+  background-color: #183a59 !important;
+  color: #fff !important;
+  transition: ease-in-out 0.3s;
+}
+
+/* .Payment-Method .Doctor-Info .doctor-location .locations .location-btn:focus{
   background-color: #183a59;
   color: #fff;
   transition: ease-in-out 0.3s;
-}
-.Payment-Method .Doctor-Info .doctor-location .locations .location-btn:focus{
-  background-color: #183a59;
-  color: #fff;
-  transition: ease-in-out 0.3s;
-}
+} */
 
 .Payment-Method .Doctor-Info .package-includes .package-list{
   color: #114b7a;
@@ -8249,13 +8250,73 @@ p {
 .SurgeryRadio{
   width: auto;
 }
+.BookedDaysDiv{
+  display: none;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.BookedDaysDiv #FromBookedDays, .BookedDaysDiv #ToBookedDays{
+  padding: 12px;
+  color: #114b7a;
+  background-color: #DDDDDD;
+  border: none;
+  outline: none;
+  margin: 10px;
+  margin-right: 0 !important;
+  border-radius: 10px;
+}
+
+.BookedDaysDiv #FromBookedDays:focus, .BookedDaysDiv #ToBookedDays:focus{
+ box-shadow: 0 0 8px #114b7a;
+ transition: ease-in-out 0.3s;
+}
+.BookedDaysDiv > div{
+  position: relative;
+}
+.BookedDaysDiv .Dec-Nov-Btn{
+  background-color: #DDDDDD;
+  position: absolute;
+  right: 5%;
+  top: 32% ; 
+  width: 80px;
+  /* padding: 10px; */
+  /* margin-left: 0; */
+  text-align: center;
+  border-left: 1px solid #114b7a;
+
+}
+/* .total-price{
+  display: none;
+} */
 .calender{
   background-color: #fff;
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 0 5px #183a59;
   width: 35rem;
-  /* width: 50%; */
+  position: relative;
+}
+
+.Calendar-Disabled-Div{
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+.Calendar-Disabled-Div span{
+  color: #fff;
+  font-weight: bold;
+  font-size: 30px;
+  margin: auto;
+  padding: 10px;
+  line-height: 50px;
+  text-align: center;
 }
 .month-div{
   display: flex;
