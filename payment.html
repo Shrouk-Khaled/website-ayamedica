@@ -242,18 +242,18 @@
           <div class="BookedDaysDiv">
             <h4>Booking Days: </h4>
             <div>
-              <input type="text" placeholder="Check In" name="FromBookedDays" id= "FromBookedDays"/>
-              <button type="button" class="Dec-Nov-Btn">Dec/Nov</button>
+              <input type="text" value="20" placeholder="Check In" name="FromBookedDays" id= "FromBookedDays"/>
+              <button type="button"  class="Dec-Nov-Btn">November</button>
             </div>
             <div>
-              <input type="text" placeholder="Check Out" name="ToBookedDays" id= "ToBookedDays"/>
-              <button type="button" class="Dec-Nov-Btn">Dec/Nov</button>
+              <input type="text" value="23" placeholder="Check Out" name="ToBookedDays" id= "ToBookedDays"/>
+              <button type="button" class="Dec-Nov-Btn">December</button>
             </div>
             <div style="padding: 10px;">
               <i> At Least 2 Days Between Comming And Leaving Day</i>
             </div>
         </div>
-          <div class="priceDiv">
+          <div class="cal-div">
             <h4 class="total-price"> CALENDAR: </h4>
           </div>
           <div class="calenderDive" id="calender-div">
@@ -281,7 +281,8 @@
             </div>
           </div>
           <div class="dayDiv">
-            <h4 class="div-day"> Your Day: <span id="day-choose-text"></span></h4>
+            <!-- <h4 class="div-day"> Your Day: <span id="day-choose-text"></span></h4> -->
+          <h4 id='days-selected'></h4>
           </div>
           <div class="priceDiv">
             <h4 class="total-price"> Price: <span id="price-text"></span></h4>
@@ -303,7 +304,11 @@
             <input type="text" name="last-name" class="last-name-input">
           </div>
           <div class="PhoneNumber">
+            
             <label for="phone-name"> Phone Number</label>
+            <select id="country-codes" class="drop-down-codes">
+             <!-- country code hereeeeeeee -->
+            </select>
             <input type="text" name="phone-name" class="phone-input">
           </div>
           <div class="Email">
@@ -324,7 +329,7 @@
             </div>
           </div>
           <div class="goPayDiv">
-            <button class="Pay-btn"> PAY</button>
+            <button class="Pay-btn"></button>
           </div>
         </form>
     </section>

@@ -8429,3 +8429,7 @@ p {
   font-weight: bold;
   font-size: 5rem;
 }
+.drop-down-codes{
+  padding: 4px;
+  width: 10rem;
+}
