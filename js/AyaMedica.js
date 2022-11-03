@@ -9,6 +9,7 @@ function bookDoctor(doctor) {
             description: doctor.description,
             packageIncludes: doctor.packageIncludes,
             locations: doctor.locations,
+            email: doctor.email
         })
     );
 }
@@ -78,7 +79,10 @@ function setDoctorPayment_Info(doctor) {
         mohafza: doctor.locations[0].mohafza,
         price: doctor.locations[0].price,
         foreign_OverDay: doctor.locations[0].foreign_OverDay,
+        double_room_text: doctor.locations[0].double_room
     }));
+    document.getElementById('double-room').innerText = doctor.locations[0].double_room
+
     for (const i in doctor.locations) {
         if (i == 0) {
             locationDiv.insertAdjacentHTML(
@@ -135,7 +139,9 @@ function setPackage_Info(doctor, index) {
         mohafza: doctor.locations[index].mohafza,
         price: doctor.locations[index].price,
         foreign_OverDay: doctor.locations[index].foreign_OverDay,
+        double_room_text: doctor.locations[index].double_room
     }));
+    document.getElementById('double-room').innerText = doctor.locations[index].double_room
 
     doctor.locations[index].package.forEach((pack, i) => {
         i === 0
@@ -197,6 +203,8 @@ function setCalender(monthIndex, firstIndex, lastIndex, country) {
 
 
     if(country !== "Egypt"){
+      console.log(JSON.parse(sessionStorage.getItem('location_package')).double_room_text);
+      document.getElementById('double-room').style.display = 'block'
         if((months[monthIndex] === "Dec" && sessionStorage.getItem('Calendar_FromDay') <= 18) || (months[monthIndex] === "Nov" && sessionStorage.getItem('Calendar_FromDay') >= 20)){
             document.querySelector(`.day-clicked-${months[monthIndex]}-${sessionStorage.getItem('Calendar_FromDay')}`).style.backgroundColor= "#114b7a";
             document.querySelector(`.day-clicked-${months[monthIndex]}-${sessionStorage.getItem('Calendar_FromDay')}`).style.color= "#fff";
@@ -263,6 +271,8 @@ function setCalender(monthIndex, firstIndex, lastIndex, country) {
         }
 
     }else{
+      document.getElementById('double-room').style.display = 'none'
+
         //AddOnClickEventListener To Each Day
         for (let i = 1; i <= lastDay; i++) {
             if (months_numbers[monthIndex] == 11) {
@@ -363,6 +373,7 @@ if (document.title === "Events") {
         {
           imgPath: "images/drassem.png",
           name: "Assem Zahran",
+          email: 'aasem64_eg@yahoo.com',
             clinicName: "International Femto Lasik Centre - Zahran Eye Center",
             link: "https://youtu.be/T0qQ21D2_fg",
             location: "New Cairo - Damiette",
@@ -378,25 +389,33 @@ if (document.title === "Events") {
                     name: "International Femto Lasik Centre - New Cairo",
                     link: "https://triumphhotel.com/luxury-home",
                     package: [
-                        "Accommodation at Truimph Hotel / 3 nights accommodation on bb basis sgl room .",
-                        "One Meet and Assist at cairo airport upon arrival",
+                        "Accommodation at Truimph Hotel / 3 nights accommodation on bb basis single room .",
+                        "One Meet and Assist service at cairo airport upon arrival",
                         "Two transfers from /to cairo airport ",
                     ],
                     mohafza: "cairo",
                     price:{egy: 400, foreign: 1010},
-                    foreign_OverDay: 170
+                    foreign_OverDay: 170,
+                    double_room: `*NOTE 
+                    The previous booking is for only 3 nights. To book extra one night for the single room, we will add 170 USD. 
+                    In case of a travel companion, the double rate will be 1,130 USD for 3 nights. To book extra one night for the double room, we will add 180 USD. 
+                    IF DOUBLE ACCOMMODATION REQUESTED, PLEASE CONTACT US ON THESE NUMBERS VIA WHATSAPP OR CALL ON +201091808186 - +201156677424. `
                 },
                 {
                     name: "Zahran Eye Center - Damiette",
                     link: "https://www.steigenberger.com/en/hotels/all-hotels/egypt/damietta/steigenberger-hotel-el-lessan",
                     package: [
-                        "Accommodation at Steigenberger El Lesan  / 3 nights accommodation on bb basis sgl room.",
-                        "One Meet and Assist at cairo airport upon arrival",
+                        "Accommodation at Steigenberger El Lesan  / 3 nights accommodation on bb basis single room.",
+                        "One Meet and Assist service at cairo airport upon arrival",
                         "Two transfers from /to cairo airport ",
                     ],
                     mohafza: "damiette",
                     price:{egy: 300, foreign: 890},
-                    foreign_OverDay: 100
+                    foreign_OverDay: 100,
+                    double_room: `*NOTE 
+                    The previous booking is for only 3 nights. To book extra one night for the single room, we will add 100 USD. 
+                    In case of a travel companion, the double rate will be 1,190 USD for 3 nights. To book extra one night for the double room, we will add 120 USD. 
+                    IF DOUBLE ACCOMMODATION REQUESTED, PLEASE CONTACT US ON THESE NUMBERS VIA WHATSAPP OR CALL ON +201091808186 - +201156677424.  `
                 },
             ],
         },
@@ -404,6 +423,7 @@ if (document.title === "Events") {
         {
           imgPath: "images/drmagdy.png",
           name: "Magdy Khalaf",
+          email: 'info@ivision-eg.com',
             clinicName: "I-Vision",
             link: "https://youtu.be/gHczffuexMg",
             location: "Heliopolis, Cairo",
@@ -420,13 +440,17 @@ if (document.title === "Events") {
                     name: "I-Vision - Heliopolis ",
                     link: "https://triumphhotel.com/luxury-home",
                     package: [
-                        "Accommodation at Truimph Hotel / 3 nights accommodation on bb basis sgl room .",
-                        "One Meet and Assist at cairo airport upon arrival",
+                        "Accommodation at Truimph Hotel / 3 nights accommodation on bb basis single room .",
+                        "One Meet and Assist service at cairo airport upon arrival",
                         "Two transfers from /to cairo airport ",
                     ],
                     mohafza: "cairo",
                     price:{egy: 400, foreign: 1010},
-                    foreign_OverDay: 170
+                    foreign_OverDay: 170,
+                    double_room: `*NOTE 
+                    The previous booking is for only 3 nights. To book extra one night for the single room, we will add 170 USD. 
+                    In case of a travel companion, the double rate will be 1,130 USD for 3 nights. To book extra one night for the double room, we will add 180 USD. 
+                    IF DOUBLE ACCOMMODATION REQUESTED, PLEASE CONTACT US ON THESE NUMBERS VIA WHATSAPP OR CALL ON +201091808186 - +201156677424.  `
                 },
             ],
 
@@ -435,11 +459,14 @@ if (document.title === "Events") {
         {
             imgPath: "images/drahmedelmassry.png",
             name: "Ahmed Elmassry",
+            email: 'receptionroayahalex@gmail.com',
             clinicName: "Alex Vision Center",
             link: "https://youtu.be/D1S-oRz9Mho",
             location: "Alexandria",
-            description: `Dr. Mahmoud Ismail, Professor of Ophthalmology and Head of Ophthalmology at Al-Azhar University, is also a Professor of Ophthalmology at the University of Alicante in Spain.\n
-            He is the medical director of Nour Al-Hayah Hospital in Egypt. Moreover, he is the first and only non-Spanish doctor to receive the Spanish National Research Award on a global scale. He is an innovator of the International Innovation Award for Postal Lens Implantation for the Treatment of Ulcers, requiring one horn procedure for three surgeries. Dr. Ismail is a Member of the International Committee of Experts, the Court for Research of the European Association for White Water and Visual Defects, and the European Association for White Water and Visual Defects. He has an annual course at the American Academy conferences in his honor. He is also one of the worldwide doctors that established laser surgery guidelines in the nineties.
+            description: `
+            Dr. Ahmed El Massry advocates for clinical studies to be of the highest scientific integrity. His specialties include Cataract and Intraocular Lens Implantation, Laser in Ophthalmology, Endophthalmitis Treatment, and Keratoplasty. \n
+            Dr. Ahmed El Massry has been a member of the American Academy of Ophthalmology (AAO) for thirty years, the International Society of Refractive Surgery (ISRS) for twenty-five years, the American Society of Cataract and Refractive Surgery (ASCRS) for twenty-five years, the Egyptian Society of Ophthalmology (ESO) for thirty-five years, the Delta Ophthalmology Society (DOS) for twenty-five years, and the Egyptian Society of Cataract and (ESOIRS). He has been conducting life surgery at ESOIRS conferences for the past 29 years. An active reviewer for the Journal of Refractive Surgery, the Journal of Cataract and Refractive Surgery, Cornea, the Sudanese Journal of Ophthalmology, the International Journal of Ophthalmology, the International Journal of Ophthalmology, and the International Journal of Ophthalmology, the EOS journal, journal of the Delta Ophthalmological Society (DOS). Reviewer for the ESOIRS journal and the Continuous Committee for the Promotion of Assistant Professors and Professors in Egypt. He is the author of three books on ophthalmology, has over seventy papers published in respectable journals, and is a consultant for Zeiss.
+            
             `,
             packageIncludes: [
                 "Meet and Assist",
@@ -451,19 +478,24 @@ if (document.title === "Events") {
                     name: "Alex Vision Center ",
                     link: "https://www.marriott.com/en-us/hotels/alysi-sheraton-montazah-hotel/overview/?scid=f2ae0541-1279-4f24-b197-a979c79310b0",
                     package: [
-                        "Accommodation at  Sheraton Montazah Hotel / 3 nights accommodation on bb basis sgl room .",
-                        "One Meet and Assist at cairo airport upon arrival",
+                        "Accommodation at  Sheraton Montazah Hotel / 3 nights accommodation on bb basis single room .",
+                        "One Meet and Assist service at cairo airport upon arrival",
                         "Two transfers from /to cairo airport ",
                     ],
                     mohafza: "alex",
                     price:{egy: 450, foreign: 1050},
-                    foreign_OverDay: 100
+                    foreign_OverDay: 100,
+                    double_room: `*NOTE 
+                    The previous booking is for only 3 nights. To book extra one night for the single room, we will add 100 USD. 
+                    In case of a travel companion, the double rate will be 1,095 USD for 3 nights. To book extra one night for the double room, we will add 115 USD. 
+                    IF DOUBLE ACCOMMODATION REQUESTED, PLEASE CONTACT US ON THESE NUMBERS VIA WHATSAPP OR CALL ON +201091808186 - +201156677424.  `
                 },
             ],
         },
         {
             imgPath: "images/drmahmoud.png",
             name: "Mahmoud Ismail",
+            email: 'bassem.stohy@nouralhaya.com',
             clinicName: "Nour Al-Hayah Eye Center",
             link: "https://youtu.be/D1S-oRz9Mho",
             location: "Heliopolis, Cairo",
@@ -479,13 +511,17 @@ if (document.title === "Events") {
                     name: "Nour Al-Hayah - Heliopolis ",
                     link: "https://triumphhotel.com/luxury-home",   
                     package: [
-                        "Accommodation at Truimph Hotel / 3 nights accommodation on bb basis sgl room .",
-                        "One Meet and Assist at cairo airport upon arrival",
+                        "Accommodation at Truimph Hotel / 3 nights accommodation on bb basis single room .",
+                        "One Meet and Assist service at cairo airport upon arrival",
                         "Two transfers from /to cairo airport ",
                     ],
                     mohafza: "cairo",
                     price:{egy: 400, foreign: 1010},
-                    foreign_OverDay: 170
+                    foreign_OverDay: 170,
+                    double_room: `*NOTE 
+                    The previous booking is for only 3 nights. To book extra one night for the single room, we will add 100 USD. 
+                    In case of a travel companion, the double rate will be 1,190 USD for 3 nights. To book extra one night for the double room, we will add 120 USD. 
+                    IF DOUBLE ACCOMMODATION REQUESTED, PLEASE CONTACT US ON THESE NUMBERS VIA WHATSAPP OR CALL ON +201091808186 - +201156677424.   `
                 },
             ],
         }
@@ -531,7 +567,7 @@ if (document.title === "Events") {
             document.querySelector('.Calendar-Disabled-Div span').innerText= "Please Select Country First!!";
             document.querySelector('.Calendar-Disabled-Div').style.display= "flex";
         }else{
-            document.querySelector('.Pay-btn').innerText = 'PayMob'
+            document.querySelector('.Pay-btn').innerText = 'paymob'
             document.getElementById('days-selected').style.display = 'none'
             document.querySelector('.calender').style.display = 'block';
             sessionStorage.setItem("total_Price", location_package.price.egy);

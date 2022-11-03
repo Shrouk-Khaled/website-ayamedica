@@ -44,12 +44,12 @@ p {
 
 .section {
   position: static;
-  display: block;
+  display: flex;
   padding: 0px;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .section.hero {
@@ -466,7 +466,7 @@ p {
 
 .footer-button.hero-btn.ios-btn {
   max-width: 265px;
-  background-color: #14a29d;
+  background-color: #114b7a;
   background-image: url('../images/ios-icon.svg');
 }
 
@@ -1099,6 +1099,7 @@ p {
 
 .bold-text {
   color: #114b7a;
+  margin-top: 20px;
 }
 
 .ar {
@@ -1155,14 +1156,14 @@ p {
   margin-left: 100px;
   padding-right: 0px;
   font-family: 'Avenirltstd book', sans-serif;
-  color: #094543;
+  color: #114b7a;
   font-size: 20px;
   text-align: center;
 }
 
 .big-p.legal {
   max-width: 70%;
-  color: #094543;
+  color: #114b7a;
 }
 
 .big-p.center {
@@ -1402,7 +1403,9 @@ p {
 }
 
 .container.hero {
-  padding: 80px 5% 60px;
+  padding: 80px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .container.services {
@@ -1418,7 +1421,7 @@ p {
 }
 
 .container.app {
-  padding-top: 80px;
+  /* padding-top: 80px; */
   padding-bottom: 80px;
 }
 
@@ -1533,8 +1536,8 @@ p {
 .hero-img {
   position: relative;
   /* display: block; */
-  width: 50%;
-  height: 50%;
+  width: 120rem;
+  height: 40%;
   margin: auto;
   padding: 0px;
   clear: right;
@@ -3055,10 +3058,16 @@ p {
 
 .app-div.slider {
   max-width: none;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 .app-div.content {
   max-width: 60%;
+  margin-top: 70px;
 }
 
 .app-div.content.right {
@@ -5124,7 +5133,7 @@ p {
   }
 
   .container.app {
-    padding-top: 60px;
+    /* padding-top: 60px; */
     padding-bottom: 60px;
   }
 
@@ -5670,7 +5679,7 @@ p {
   }
 
   .container.app {
-    padding-top: 40px;
+    /* padding-top: 40px; */
     padding-bottom: 40px;
   }
 
@@ -8083,6 +8092,7 @@ p {
   background-color: #97b8e92a;
   padding-left: 20px;
   margin: 15px 0;
+  border-radius: 10px;
 }
 
 .Payment-Method .Doctor-Info h4{
@@ -8231,7 +8241,7 @@ p {
 #Book-Form .radios{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   margin-top: 20px;
 }
@@ -8240,6 +8250,7 @@ p {
   color: #114b7a;
   font-size: 3vh;
   font-weight: bold;
+  margin-right: 20px;
 }
 .goPayDiv{
   display: flex;
@@ -8256,6 +8267,7 @@ p {
   font-size: 20px;
   background-color: #114b7a;
   margin: 25px auto;
+  width: 15%;
 }
 .calenderDive{
   display: flex;
@@ -8495,4 +8507,7 @@ p {
   max-width: 560px;
   height: 100%;
   max-height: 315px;
+}
+#double-room{
+  padding: 10px;
 }
