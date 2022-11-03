@@ -1794,15 +1794,16 @@ p {
   -webkit-transition: background-color 350ms ease;
   transition: background-color 350ms ease;
   font-family: 'Avenirltstd book', sans-serif;
-  color: rgba(0, 0, 0, 0.8);
+  color: #183a59;
   font-size: 1rem;
   font-weight: 400;
   text-transform: capitalize;
 }
 
 .link-text:hover {
-  background-color: #e3fffe;
+  background-color: #73a2cc;
   color: #183a59;
+  font-weight: bold;
 }
 
 .link-text.ar {
@@ -2224,7 +2225,7 @@ p {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-color: #e8f6f5;
+  background-color: #c4e0f5;
 }
 
 .services-content {
@@ -8415,4 +8416,16 @@ p {
 .next-month:hover, .prev-month:hover{
   cursor: pointer;
   color: #fbc012;
+}
+/* comming soon page */
+.comming-soon{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comming-soon p{
+  color: #2374bb;
+  font-weight: bold;
+  font-size: 5rem;
 }
