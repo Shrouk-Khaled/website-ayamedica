@@ -13,6 +13,19 @@ function bookDoctor(doctor) {
     );
 }
 
+function handleYoutubeFrame(ev, link){
+  if(link){
+      const iframeSrc=  link.replace('https://youtu.be', 'https://youtube.com/embed');
+      document.getElementById('youtube-iframe').setAttribute('src', iframeSrc);
+      document.getElementById('Youtube-Frame').style.display= "flex";
+  }else{
+     
+      document.getElementById('youtube-iframe').setAttribute('src', "#");
+
+      document.getElementById('Youtube-Frame').style.display= "none";
+  }
+}
+
 function getDoctorCard_HTML(doctor, id) {
     return `
         <div  class="doctor-card">
@@ -31,8 +44,11 @@ function getDoctorCard_HTML(doctor, id) {
                 </div>
                 <div class="title-box">
                     <span class="title-name">Link: </span>
-                    <span class="title-text"><a class="herf-style"
-                        href=${doctor.link}>${doctor.link}</a>
+                    <span class="title-text">
+                    <a class="herf-style"
+                        href='#'
+                        onclick="handleYoutubeFrame(this, '${doctor.link}')"
+                        >${doctor.link}</a>
                     </span>
                 </div>
                 <div class="title-box">
@@ -41,8 +57,8 @@ function getDoctorCard_HTML(doctor, id) {
                 </div>
                 <div class="title-box">
                     <span class="title-name">Description: </span>
-                    <span class="title-text">${doctor.description.split("\n")[0]
-        }</span>
+                    <span class="title-text">${doctor.description.slice(0,150)}...</span>
+        </span>
                 </div>
             </div>
             <div class="book-box" >
@@ -239,7 +255,8 @@ function setCalender(monthIndex, firstIndex, lastIndex, country) {
 
             }
             // console.log( parseInt(sessionStorage.getItem('total_Price')),  parseInt(JSON.parse(sessionStorage.getItem('location_package')).foreign_OverDay), totalDays );
-            document.getElementById('days-selected').innerHTML = `You are select ${(totalDays)} days`
+            document.getElementById('days-selected').innerHTML = `You booked ${(totalDays)} nights, ${totalDays + 1} days.`
+            document.getElementById('days-selected').style.display = 'block'
             const total_Price= parseInt(sessionStorage.getItem('total_Price')) + (parseInt(JSON.parse(sessionStorage.getItem('location_package')).foreign_OverDay)* (totalDays - 3));
             document.querySelector('.total-price #price-text').innerText= `$${total_Price}`;
             // showDate_Span.innerHTML = `<i style= "color: grey;">From:</i> ${sessionStorage.getItem('Calendar_FromDay')}/${months_numbers[sessionStorage.getItem('Calendar_FromMonth')]}/2022 <i style= "color: grey;">To:</i> ${sessionStorage.getItem('Calendar_ToDay')}/${months_numbers[sessionStorage.getItem('Calendar_ToMonth')]}/2022`;
@@ -344,8 +361,8 @@ if (document.title === "Events") {
     var Doctors_Data = [
         //Doctor Assem
         {
-            imgPath: "images/drassem.jpg",
-            name: "Assem Zahran",
+          imgPath: "images/drassem.png",
+          name: "Assem Zahran",
             clinicName: "International Femto Lasik Centre - Zahran Eye Center",
             link: "https://youtu.be/T0qQ21D2_fg",
             location: "New Cairo - Damiette",
@@ -385,8 +402,8 @@ if (document.title === "Events") {
         },
         //Doctor Magdy
         {
-            imgPath: "images/drmagdy.jpg",
-            name: "Magdy Khalaf",
+          imgPath: "images/drmagdy.png",
+          name: "Magdy Khalaf",
             clinicName: "I-Vision",
             link: "https://youtu.be/gHczffuexMg",
             location: "Heliopolis, Cairo",
@@ -605,8 +622,7 @@ if (document.title === "Events") {
         };
     
         document.getElementById('ToBookedDays').onkeyup= (e)=>{
-           
-            
+           if(e.target.value){
             sessionStorage.setItem("Calendar_ToDay", e.target.value);
             sessionStorage.setItem("Shifted_To_DEC", false);
             //Detect Dec/Nov From Day Number
@@ -654,6 +670,14 @@ if (document.title === "Events") {
                 }
             }
 
+           }
+           else{
+            document.getElementById('days-selected').style.display = 'none';
+            document.querySelector('.priceDiv').style.display = 'none';
+            document.querySelector('.goBook-btn').setAttribute('disabled', true)
+           }
+            
+           
          
         };
     }//End onchange
